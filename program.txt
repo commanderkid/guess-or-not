@@ -1,0 +1,27 @@
+Оставлю здесь. Одно из упражнений на edx. MITx: 6.00.1x Introduction to Computer Science and Programming Using Python
+
+<b>Описание:</b>
+
+In this problem, you'll create a program that guesses a secret number!
+
+The program works as follows: you (the user) thinks of an integer between 0 (inclusive) and 100 (not inclusive). The computer makes guesses, and you give it input - is its guess too high or too low? Using bisection search, the computer will guess the user's secret number!
+
+Note: your program should use input to obtain the user's input! Be sure to handle the case when the user's input is not one of h, l, or c.
+
+<b>Решение</b>
+
+# Paste your code into this box
+print("Please think of a number between 0 and 100!")
+a, b, guess = 0, 100, ""
+while guess != "c":
+    perem = (a + b) // 2
+    guess_o = print("Is your secret number " + str(perem) + "?")
+    guess = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly.")
+    if guess == "c":
+        print("Game over, your guess is " + str(perem) + "!")
+    elif guess == "l":
+        a = perem
+    elif guess == "h":
+        b = perem
+    else:
+        print("Sorry, I didn't understand your input")
